@@ -1,20 +1,24 @@
-= Welcome to Template Tutorial
+= Red Hat OpenShift Data Science Workshop - Licence plate recognition
 :page-layout: home
 :!sectids:
 
 [.text-center.strong]
-== Publish Services to Kubernetes
+== Introduction
 
-A Kubernetes tutorial to show how you can deploy a Java service to a Kubernetes cluster as it was a child game.
+Welcome!
 
-[.tiles.browse]
-== Browse modules
+In this introductory workshop, you'll learn how to use *Red Hat OpenShift Data Science* to recognize licence plates in car pictures, and extract the number from this plate.
 
-[.tile]
-.xref:01-setup.adoc[Get Started]
-* xref:01-setup.adoc#minikube[Minikube]
+* We'll start from an image like this:
 
-[.tile]
-.xref:02-deploy.adoc[Deploying]
-* xref:02-deploy.adoc#package[Package the Application]
-* xref:02-deploy.adoc#deploy[Deploy the Application]
+image::car.png[alt text]
+
+* Then we'll automatically recognize and extract this image:
+
+image::plate.png[alt text]
+
+* From which we will recognize the plate number, *S7JDW* !
+
+And all of this without having to install anything on your own computer, thanks to *Red Hat OpenShift Data Science*!
+
+If you're ready,  xref:01-start-jupyter.adoc[let's start!]

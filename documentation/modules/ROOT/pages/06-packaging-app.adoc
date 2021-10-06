@@ -1,0 +1,58 @@
+:doctype: book
+:nav_order: 3
+
+= Step 6: Packaging our application
+
+Now that the application code is working, we're ready to package it as a container image, and have it running directly into OpenShift as a service you will be able to call from any other application.
+
+NOTE: the application code is available in the same repo we've been using before, but in the `app` branch. It is the same content as we had in our notebooks, except that instead of passing an image name to the prediction function, we will be able to directly upload any image!
+
+== Building the application inside OpenShift
+
+* Open your OpenShift UI and switch to the developer view from the menu on the top left:
+
+image::dev_view.png[alt text]
+
+* Make sure you are in the right project that was assigned to you:
+
+image::select_project.png[alt text]
+
+* From the `+Add` menu, click on the `From Git` tile:
+
+image::from_git.png[alt text]
+
+* In the ``Git Repo URL``field, enter: `+https://github.com/rh-aiservices-bu/licence-plate-workshop.git+`
+
+image::git_repo.png[alt text]
+
+* *Don't miss this step!* Click on `Show advanced Git options`, and in the `Git reference` field, enter `main` (this is the branch to use in our github project):
+
+image::app_branch.png[alt text]
+
+* Leave the other fields as default and scroll down. You will see that OpenShift automatically recognized that our repo contains Python code, and that the right base image has been selected. Pretty neat, eh?!
+
+image::build_image.png[alt text]
+
+* If you continue to scroll down, you will see that everything is automatically selected to create a deployment of your application, and to create a Route through which you will be able to access it. Everything is ready, so you can click on `Create`:
+
+image::create_app.png[alt text]
+
+* You will see that a build is going on:
+
+image::build_app.png[alt text]
+
+* The automated building process will take a few minutes. Some Alerts may appear if OpenShift tries to deploy while the build is still running, but that's OK. Then OpenShift will deploy the application (rollout), and in the topolody view you should obtain something like this:
+
+image::topology_view.png[alt text]
+
+* Just click on the application line to open a detail panel on the right:
+
+image::detail_panel.png[alt text]
+
+* If you scroll down on the detail panel, you will see the route that was created for your application. This is the URL you will use to send images:
+
+image::route.png[alt text]
+
+Once you're finished, you can come back here and xref:07-testing-app.adoc[head to the next section.]
+
+
