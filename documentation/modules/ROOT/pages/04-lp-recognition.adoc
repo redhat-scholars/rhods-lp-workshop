@@ -1,0 +1,18 @@
+:doctype: book
+:nav_order: 3
+
+= Step 4: Licence plate recognition
+
+Now that you know how the environment works, the real work can begin!
+
+Still in you environment, just open the file `02_Licence-plate-recognition.ipynb`, and follow the instructions directly in the notebook!
+
+image::notebook_lpr.png[alt text]
+
+At the end of the notebook, it will look like this:
+
+image::lpr_result.png[alt text]
+
+Once you're finished, you can come back here and xref:05-model-api.adoc[head to the next section.]
+
+

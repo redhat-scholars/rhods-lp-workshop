@@ -1,0 +1,39 @@
+:doctype: book
+:nav_order: 2
+
+= Step 2: The Jupyter environment
+
+You are now inside your Jupyter environment. As you can see, it's a web-based environment, but everything you'll do here is in fact happening on the *Red Hat OpenShift Data Science* cluster. This means that without having to install and maintain anything on your own computer, and without disposing of lots of local resources like CPU and RAM, you can still conduct your Data Science work in this powerful and stable managed environment.
+
+In the "file-browser" like window you're in right now, you'll find the files and folders that are saved inside your own personal space inside *Red Hat OpenShift Data Science*. It's pretty empty right now though... So the first thing we will do is to bring the content of the workshop inside this environment.
+
+* On the left toolbar, click on the Git icon:
+
+image::git_icon.png[alt text]
+
+* Then click on *Clone a Repository*:
+
+image::clone_repo.png[alt text]
+
+* Enter git the URL, `https://github.com/rh-aiservices-bu/licence-plate-workshop.git`, then click *CLONE*:
+
+[.lines_space]
+[.console-input]
+[source,text]
+----
+https://github.com/rh-aiservices-bu/licence-plate-workshop.git
+----
+
+image::clone_start.png[alt text]
+
+* It takes a few seconds, after which you can double-click and navigate to the newly-created folder, `licence-plate-workshop`:
+
+image::lp_folder_click.png[alt text]
+
+'''
+
+image::lp_folder.png[alt text]
+
+xref:03-notebooks.adoc[Ready? Let's go to the next section.]
+
+
