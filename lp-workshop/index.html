@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Red Hat OpenShift Data Science Workshop - Licence plate recognition :: Licence Plate Workshop</title>
+    <link rel="canonical" href="https://rh-aiservices-bu.github.io/lp-workshop/lp-workshop/index.html">
+    <link rel="next" href="01-start-jupyter.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../_/img/NewRHDFullLogo_4-color_white-wordmark.png" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://rh-aiservices-bu.github.io/lp-workshop">Licence Plate Workshop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="lp-workshop" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="01-start-jupyter.html">1. Starting a Jupyter environment</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="02-jupyter-env.html">2. The Jupyter environment</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="03-notebooks.html">3. Notebooks</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="04-lp-recognition.html">4. Licence plate recognition</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="05-model-api.html">5. Packaging the model as an API</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="06-packaging-app.html">6. Packaging our application</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="07-testing-app.html">7. Testing the application</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="08-conclusion.html">Conclusion</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link is-current"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Licence Plate Workshop</a></li>
+    <li><a href="index.html">Red Hat OpenShift Data Science Workshop - Licence plate recognition</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/rh-aiservices-bu/lp-workshop/edit/master/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Red Hat OpenShift Data Science Workshop - Licence plate recognition</h1>
+<div class="sect1 text-center strong">
+<h2>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Welcome!</p>
+</div>
+<div class="paragraph">
+<p>In this introductory workshop, you&#8217;ll learn how to use <strong>Red Hat OpenShift Data Science</strong> to recognize licence plates in car pictures, and extract the number from this plate.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>We&#8217;ll start from an image like this:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/car.png" alt="alt text">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Then we&#8217;ll automatically recognize and extract this image:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/plate.png" alt="alt text">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>From which we will recognize the plate number, <strong>S7JDW</strong> !</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And all of this without having to install anything on your own computer, thanks to <strong>Red Hat OpenShift Data Science</strong>!</p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re ready,  <a href="01-start-jupyter.html" class="page">let&#8217;s start!</a></p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="next"><a href="01-start-jupyter.html">1. Starting a Jupyter environment</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
