@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Step 5: Packaging the model as an API :: Licence Plate Workshop</title>
+    <link rel="canonical" href="https://redhat-scholars.github.io/rhods-lp-workshop/rhods-lp-workshop/05-model-api.html">
+    <link rel="prev" href="04-lp-recognition.html">
+    <link rel="next" href="06-packaging-app.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../_/img/NewRHDFullLogo_4-color_white-wordmark.png" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://redhat-scholars.github.io/rhods-lp-workshop">Licence Plate Workshop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhods-lp-workshop" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="01-start-jupyter.html">1. Starting a Jupyter environment</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="02-jupyter-env.html">2. The Jupyter environment</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="03-notebooks.html">3. Notebooks</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="04-lp-recognition.html">4. Licence plate recognition</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="05-model-api.html">5. Packaging the model as an API</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="06-packaging-app.html">6. Packaging our application</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="07-testing-app.html">7. Testing the application</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="08-conclusion.html">Conclusion</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Licence Plate Workshop</a></li>
+    <li><a href="05-model-api.html">5. Packaging the model as an API</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/redhat-scholars/rhods-lp-workshop/edit/master/documentation/modules/ROOT/pages/05-model-api.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Step 5: Packaging the model as an API</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the previous section, we learned how to create the code that will be able to extract the number from a given licence plate. But of course we cannot use a notebook directly like this in a production environment.</p>
+</div>
+<div class="paragraph">
+<p>So now we will learn how to <strong>package</strong> this code as an <strong>API</strong> that you can directly query from other applications.</p>
+</div>
+<div class="paragraph">
+<p>Some explanations first:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The code that we wrote in the notebook has been repackaged as a single Python file, <code>prediction.py</code>. Basically, it&#8217;s just the code that was in all the cells of the notebook that was put together inside a single file.</p>
+</li>
+<li>
+<p>To use this code as a function you can call, we just added a function called <code>predict</code> that takes a string as an input, the name of the picture, does the recognition, and sends back the result. Open the file directly in JupyterLab, see for yourself, you should recognize our previous code, with this new function added.</p>
+</li>
+<li>
+<p>There are other files in the folder that are used to provide functions to launch a web server that will be used to serve our API.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After these explanations, you are ready to open the file <code>03_LPR_run_application.ipynb</code>, and follow the instructions directly in the notebook!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/lpr_run.png" alt="alt text">
+</div>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll first launch the Server:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/launch_server.png" alt="alt text">
+</div>
+</div>
+<div class="paragraph">
+<p>Then query the API:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/query_api.png" alt="alt text">
+</div>
+</div>
+<div class="paragraph">
+<p>Once you&#8217;re finished, you can come back here and <a href="06-packaging-app.html" class="page">head to the next section.</a></p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="04-lp-recognition.html">4. Licence plate recognition</a></span>
+  <span class="next"><a href="06-packaging-app.html">6. Packaging our application</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

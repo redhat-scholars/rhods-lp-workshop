@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Step 3: Notebooks :: Licence Plate Workshop</title>
+    <link rel="canonical" href="https://redhat-scholars.github.io/rhods-lp-workshop/rhods-lp-workshop/03-notebooks.html">
+    <link rel="prev" href="02-jupyter-env.html">
+    <link rel="next" href="04-lp-recognition.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../_/img/NewRHDFullLogo_4-color_white-wordmark.png" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://redhat-scholars.github.io/rhods-lp-workshop">Licence Plate Workshop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhods-lp-workshop" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="01-start-jupyter.html">1. Starting a Jupyter environment</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="02-jupyter-env.html">2. The Jupyter environment</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="03-notebooks.html">3. Notebooks</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="04-lp-recognition.html">4. Licence plate recognition</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="05-model-api.html">5. Packaging the model as an API</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="06-packaging-app.html">6. Packaging our application</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="07-testing-app.html">7. Testing the application</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="08-conclusion.html">Conclusion</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Licence Plate Workshop</a></li>
+    <li><a href="03-notebooks.html">3. Notebooks</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/redhat-scholars/rhods-lp-workshop/edit/master/documentation/modules/ROOT/pages/03-notebooks.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Step 3: Notebooks</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section provides a small introduction on how to use Jupyter Notebooks. If you&#8217;re already at ease with Jupyter, you can <a href="04-lp-recognition.html" class="page">directly head to the next section</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_whats_a_notebook"><a class="anchor" href="#_whats_a_notebook"></a>What&#8217;s a notebook?</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>A notebook is an environment where you have <em>cells</em> that can display formatted text, or code.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is an empty cell:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/cell.png" alt="alt text">
+</div>
+</div>
+<div class="paragraph">
+<p>And a cell where we have entered some code:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/cell_code.png" alt="alt text">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Code cells contain Python code that can be run interactively. Thats means you can modify the code, then run it. The code will not run on you computer or in the browser, but directly in the environment you are connected to, <strong>Red Hat OpenShift Data Science</strong> in our case.</p>
+</li>
+<li>
+<p>To run a code cell, just select it (click in the cell, or on the left side of it), and click the Run/Play button from the toolbar (you can also press CTRL+Enter to run a cell, or Shift+Enter to run the cell and automatically select the following one).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Run button on the toolbar:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/run_button.png" alt="alt text">
+</div>
+</div>
+<div class="paragraph">
+<p>Our cell after pressing Run:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/cell_run.png" alt="alt text">
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see, you have the result of the code that was run in that cell, as well as information on when this particular cell has been run.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When you save a notebook, the code as well as the results are saved! So you can always reopen it to look at the results without having to run all the program again, while still having access to the code.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Notebooks are so named because they are just like a physical <strong>Notebook</strong>: it&#8217;s exactly like if you were taking notes about your experiments (which you will do), along with the code itself, including any parameters you set. You see the output of the experiment inline (this is the result from a cell once it&#8217;s run), along with all the notes you want to take (to do that, switch the cell type from the menu from <code>Code</code> to <code>Markup</code>).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_time_to_play"><a class="anchor" href="#_time_to_play"></a>Time to play</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that we have covered the basics, just give it a try!</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In your Jupyter environment (the file explorer-like interface), there is file called <code>01_sanbdbox.ipynb</code>. Double-click on it to launch the notebook (it will open another tab in the content section of the environment). Please feel free to experiment, run the cells, add some more and create functions. You can do what you want - it&#8217;s your environment, and there is no risk of breaking anything or impacting other users. This environment isolation is also a great advantage brought by <strong>Red Hat OpenShift Data Science</strong>.</p>
+</li>
+<li>
+<p>You can also create a new notebook by selecting <code>File</code>-&gt;<code>New</code>-&gt;<code>Notebook</code>from the menu on the top left, then select a Python 3 kernel. This instructs Jupyter that we want to create a new notebook where the code cells will be run using a Python 3 kernel. We could have different kernels, with different languages or versions that we can run into notebooks, but that&#8217;s a story for another time&#8230;&#8203;</p>
+</li>
+<li>
+<p>You can also create a notebook by simply clicking on the icon in the launcher:</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/new_notebook.png" alt="alt text">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you want to learn more about notebooks, head to <a href="https://jupyter.org/">this page</a> .</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Now that you&#8217;re more familiar with notebooks, you&#8217;re ready to <a href="04-lp-recognition.html" class="page">go to the next section.</a></p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="02-jupyter-env.html">2. The Jupyter environment</a></span>
+  <span class="next"><a href="04-lp-recognition.html">4. Licence plate recognition</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
