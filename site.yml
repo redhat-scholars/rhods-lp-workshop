@@ -3,8 +3,8 @@ runtime:
 
 site:
   title: Licence Plate Workshop
-  url: https://rh-aiservices-bu.github.io/lp-workshop
-  start_page: lp-workshop::index.adoc
+  url: https://redhat-scholars.github.io/rhods-lp-workshop
+  start_page: rhods-lp-workshop::index.adoc
 
 content:
   sources:

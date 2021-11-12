@@ -3,8 +3,8 @@ runtime:
 
 site:
   title: Licence Plate Workshop (Dev Mode)
-  url: http://localhost:3000/lp-workshop/index.html
-  start_page: lp-workshop::index.adoc
+  url: http://localhost:3000/rhods-lp-workshop/index.html
+  start_page: rhods-lp-workshop::index.adoc
 
 content:
   sources:
@@ -13,7 +13,7 @@ content:
       start_path: documentation
 asciidoc:
   attributes:
-    title: Licence Plate Workshop (Dev Mode)
+    page-pagination: true
   extensions:
     - ./lib/remote-include-processor.js
     - ./lib/tab-block.js
