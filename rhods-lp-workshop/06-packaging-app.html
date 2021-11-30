@@ -183,13 +183,25 @@ the application code is available in the same repo we&#8217;ve been using before
 <div class="ulist">
 <ul>
 <li>
-<p>Leave the other fields as default and scroll down. You will see that OpenShift automatically recognized that our repo contains Python code, and that the right base image has been selected. Pretty neat, eh?!</p>
+<p>By default, OpenShift will want to use the builder image called <strong>Python 3.9 (UBI8)</strong>. You will want to edit the Import Strategy:</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/build_image.png" alt="alt text">
+<img src="_images/edit_import_strategy.png" alt="alt text">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The image to choose in the dropdown list is <strong>3.8-ubi7</strong></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pinned_builder_image.png" alt="alt text">
 </div>
 </div>
 <div class="ulist">
