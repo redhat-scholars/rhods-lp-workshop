@@ -29,9 +29,13 @@ image::git_repo.png[alt text]
 
 image::app_branch.png[alt text]
 
-* Leave the other fields as default and scroll down. You will see that OpenShift automatically recognized that our repo contains Python code, and that the right base image has been selected. Pretty neat, eh?!
+* By default, OpenShift will want to use the builder image called **Python 3.9 (UBI8)**. You will want to edit the Import Strategy:
 
-image::build_image.png[alt text]
+image::edit_import_strategy.png[alt text]
+
+* The image to choose in the dropdown list is **3.8-ubi7**
+
+image::pinned_builder_image.png[alt text]
 
 * If you continue to scroll down, you will see that everything is automatically selected to create a deployment of your application, and to create a Route through which you will be able to access it. Everything is ready, so you can click on `Create`:
 
