@@ -16,7 +16,7 @@ image::lpr_result.png[alt text]
 
 [TIP]
 ====
-There is a way to display more than one notebook at a time.
+There is a way to display multiple notebooks side-by-side.
 
 Can you find how to do it?
 
