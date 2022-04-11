@@ -26,6 +26,4 @@ Once you have authorized access, you will be taken to the JupyterHub "Spawner Op
 
 image::j_start.png[alt text]
 
-While your environment is starting,  xref:02-jupyter-env.adoc[let's go to the next section.]
-
-
+While your environment is starting, xref:02-jupyter-env.adoc[let's go to the next section.]
