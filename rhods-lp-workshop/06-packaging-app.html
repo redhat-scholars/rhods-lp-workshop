@@ -103,18 +103,6 @@
 <div class="paragraph">
 <p>Now that the application code is working, we&#8217;re ready to package it as a container image, and have it running directly into OpenShift as a service you will be able to call from any other application.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-the application code is available in the same repo we&#8217;ve been using before, but in the <code>app</code> branch. It is the same content as we had in our notebooks, except that instead of passing an image name to the prediction function, we will be able to directly upload any image!
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -263,6 +251,50 @@ the application code is available in the same repo we&#8217;ve been using before
 <div class="content">
 <img src="_images/route.png" alt="alt text">
 </div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>By default, a single replica of your deployed model is running.</p>
+</div>
+<div class="paragraph">
+<p>Can you find how to change the configuration so that 2 replicas are running simultaneously?</p>
+</div>
+<div class="paragraph">
+<p> <details><summary> 
+Display the answer
+ </summary><div> </p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the Application to open the Detail panel</p>
+</li>
+<li>
+<p>Click on the <strong>Actions</strong> drop-down.</p>
+</li>
+<li>
+<p>Click on <strong>Edit Pod count</strong></p>
+</li>
+<li>
+<p>Change the number from 1 to 2</p>
+</li>
+<li>
+<p>Click <strong>Save</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p> </div></details> </p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Once you&#8217;re finished, you can come back here and <a href="07-testing-app.html" class="xref page">head to the next section.</a></p>
